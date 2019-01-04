@@ -18,7 +18,6 @@ public class BeanUtilTest {
     @Test
     public void beanToJson() {
         String a = "{\"a\":\"bbCc\"}";
-        System.out.println(BeanUtil.bean2JsonSnakeCase(a));
     }
 
 

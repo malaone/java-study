@@ -1,4 +1,4 @@
-package com.malaone.design.chain;
+package com.malaone.design.chain.v1;
 
 /**
  * @Author: xulifei

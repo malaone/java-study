@@ -1,7 +1,5 @@
 package com.malaone.util;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import org.apache.commons.beanutils.BeanMap;
 import org.apache.commons.beanutils.BeanUtils;
 
@@ -22,60 +20,9 @@ import java.util.Map;
 public class BeanUtil {
 
 
-    // json <---> bean
-    //-------------------------------------------------------------------------
-
-    /**
-     * bean to json，驼峰转下划线
-     *
-     * @param obj bean
-     * @param <T> T
-     * @return json
-     */
-    public static <T> String bean2JacksonSnakeCase(T obj) {
-        return bean2Jackson(obj, true);
-    }
-
-    /**
-     * bean to json
-     *
-     * @param obj bean
-     * @param <T> T
-     * @return json
-     */
-    public static <T> String bean2Jackson(T obj) {
-        return bean2Jackson(obj, false);
-    }
 
 
-    /**
-     * bean to json
-     * 无法将String类型驼峰转下划线
-     *
-     * @param obj         bean
-     * @param isSnakeCase camel case to lower case with underscores
-     * @param <T>         T
-     * @return json
-     */
-    public static <T> String bean2Jackson(T obj, boolean isSnakeCase) {
-        if (obj == null) {
-            return null;
-        }
-
-        ObjectMapper mapper = new ObjectMapper();
-        if (isSnakeCase) {
-            mapper.setPropertyNamingStrategy(PropertyNamingStrategy.SNAKE_CASE);
-        }
-
-        try {
-            return mapper.writeValueAsString(obj);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
-    // map <---> bean
+    // map ---> bean
     //-------------------------------------------------------------------------
 
     /**
@@ -126,6 +73,8 @@ public class BeanUtil {
         }
     }
 
+    // bean ---> map
+    //-------------------------------------------------------------------------
     /**
      * bean转map，map值为Object
      *
