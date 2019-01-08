@@ -1,5 +1,6 @@
 package com.malaone.design.chain.v1;
 
+import com.malaone.design.chain.Controller;
 import com.malaone.design.chain.Request;
 import com.malaone.design.chain.Response;
 
@@ -22,9 +23,7 @@ public class FilterChain {
 
     public void doFilter(Request request, Response response) {
         if (index == filters.size()) {
-            response.setCode("0");
-            response.setMsg("成功");
-            response.setData("欢迎。。。");
+            Controller.process(request, response);
             return;
         }
         Filter filter = filters.get(index++);

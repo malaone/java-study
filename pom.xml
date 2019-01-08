@@ -11,6 +11,7 @@
     <modules>
         <module>design-patterns</module>
         <module>common-utils</module>
+        <module>algorithm</module>
     </modules>
 
     <properties>

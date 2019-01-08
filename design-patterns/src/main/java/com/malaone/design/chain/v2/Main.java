@@ -1,8 +1,7 @@
-package com.malaone.design.chain.v1;
+package com.malaone.design.chain.v2;
 
 import com.malaone.design.chain.Request;
 import com.malaone.design.chain.Response;
-import com.malaone.design.chain.v1.*;
 import lombok.extern.slf4j.Slf4j;
 
 /**
@@ -16,7 +15,7 @@ public class Main {
     public static void main(String[] args) {
         Request request = new Request();
         request.setIp("192.168.1.1");
-        request.setUsername("malaone2");
+        request.setUsername("malaone");
         request.setPassword("123456");
         request.setRole("admin");
 
@@ -24,13 +23,11 @@ public class Main {
         Filter securityFilter = new SecurityFilter();
         Filter authFilter = new AuthFilter();
 
-        FilterChain filterChain = new FilterChain();
-        filterChain.addFilters(whiteListFilter);
-        filterChain.addFilters(securityFilter);
-        filterChain.addFilters(authFilter);
+        whiteListFilter.setSuccessorFilter(securityFilter);
+        securityFilter.setSuccessorFilter(authFilter);
 
         Response response = new Response();
-        filterChain.doFilter(request, response);
+        whiteListFilter.doFilter(request, response);
         log.info(response.toString());
     }
 }
