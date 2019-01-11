@@ -1,5 +1,8 @@
 package com.malaone.design.proxy.ztatic;
 
+import com.malaone.design.proxy.Animal;
+import com.malaone.design.proxy.Tiger;
+
 /**
  * @Author: xulifei
  * @Date: 16:53 2019/1/7

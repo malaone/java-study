@@ -12,6 +12,7 @@
         <module>design-patterns</module>
         <module>common-utils</module>
         <module>algorithm</module>
+        <module>java-base</module>
     </modules>
 
     <properties>

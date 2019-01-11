@@ -1,4 +1,4 @@
-package com.malaone.design.proxy.ztatic;
+package com.malaone.design.proxy;
 
 /**
  * @Author: xulifei

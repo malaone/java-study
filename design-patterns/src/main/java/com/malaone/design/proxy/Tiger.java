@@ -1,10 +1,13 @@
-package com.malaone.design.proxy.ztatic;
+package com.malaone.design.proxy;
+
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * @Author: xulifei
  * @Date: 16:26 2019/1/7
  * @Description:
  */
+@Slf4j
 public class Tiger implements Animal {
 
     private String name;
@@ -23,6 +26,6 @@ public class Tiger implements Animal {
 
     @Override
     public void eat(String foodName) {
-        System.out.println(name + " is eating " + foodName);
+        log.info("{} is eating {}", name, foodName);
     }
 }
