@@ -18,8 +18,7 @@ public class AuthFilter extends Filter {
 
         if ("admin".equals(role)) {
             log.info("访问权限验证通过");
-            Controller.process(request, response);
-
+            doNext(request, response);
         } else {
             response.setCode("3");
             response.setMsg("没有访问权限");

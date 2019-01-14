@@ -1,5 +1,6 @@
 package com.malaone.design.chain.v2;
 
+import com.malaone.design.chain.Controller;
 import com.malaone.design.chain.Request;
 import com.malaone.design.chain.Response;
 import lombok.extern.slf4j.Slf4j;
@@ -24,9 +25,8 @@ public abstract class Filter {
         if (successorFilter != null) {
             successorFilter.doFilter(request, response);
         } else {
-            log.info("缺少继任者");
-            response.setCode("11");
-            response.setMsg("缺少继任者");
+            log.info("通过所有过滤器进入Controller");
+            Controller.process(request, response);
         }
     }
 
