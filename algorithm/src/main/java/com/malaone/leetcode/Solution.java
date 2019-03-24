@@ -137,7 +137,7 @@ public class Solution {
         		list.add(word);
         	}
         }
-        return list.toArray(new String[list.size()]);
+        return list.toArray(new String[0]);
     }
 	
 	private Set<Character> string2set(String str) {
@@ -175,11 +175,11 @@ public class Solution {
     }
 	
 	private String reverse(String str) {
-		String result = "";
+		StringBuilder result = new StringBuilder();
 		for(int i=str.length()-1; i>=0; i--) {
-			result += str.substring(i, i+1);
+			result.append(str, i, i + 1);
 		}
-		return result;
+		return result.toString();
 	}
 	
 	/**

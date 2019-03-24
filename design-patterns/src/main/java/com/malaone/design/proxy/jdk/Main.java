@@ -18,7 +18,7 @@ public class Main {
         Animal animalProxy1 = (Animal) Proxy.newProxyInstance(
                 animal.getClass().getClassLoader(), animal.getClass().getInterfaces(), handler);
 
-        //除了该方法，还有equals, toString, hashCode三个方法做了加强
+        //除了该方法，还有equals, toString, hashCode三个方法做了增强
         animalProxy1.eat("bread");
         System.out.println(animalProxy1 instanceof Proxy); //true
     }

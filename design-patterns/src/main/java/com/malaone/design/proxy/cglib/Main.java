@@ -15,7 +15,7 @@ public class Main {
         System.setProperty(DebuggingClassWriter.DEBUG_LOCATION_PROPERTY, "D:\\tmp\\cglib");
         // 通过CGLIB动态代理获取代理对象的过程
         Enhancer enhancer = new Enhancer();
-        // 设置enhancer对象的父类
+        // 设置代理类的父类
         enhancer.setSuperclass(Target.class);
         // 设置enhancer的回调对象
         enhancer.setCallback(new CglibMethodInterceptor());

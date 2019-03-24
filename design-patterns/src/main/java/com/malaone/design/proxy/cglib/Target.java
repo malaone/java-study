@@ -8,15 +8,14 @@ package com.malaone.design.proxy.cglib;
 public class Target {
 
     public Target() {
-        System.out.println("Target构造器");
+        System.out.println("class constructor: Target()");
     }
-
 
     /**
      * 该方法不能被子类覆盖,Cglib是无法代理final修饰的方法的
      */
     final public String finalMethod(String name) {
-        System.out.println("Target:finalMethod>>"+name);
+        System.out.println("Target:finalMethod>>" + name);
         return null;
     }
 

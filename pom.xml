@@ -13,6 +13,8 @@
         <module>common-utils</module>
         <module>algorithm</module>
         <module>java-base</module>
+        <module>io</module>
+        <module>concurrent</module>
     </modules>
 
     <properties>
