@@ -13,6 +13,11 @@ public class StaticTest {
 
     static StaticTest st = new StaticTest();
 
+    {
+        g = 1;
+        System.out.println("g" + g);
+    }
+    private static int g;
     static
     {
         System.out.println("1");
