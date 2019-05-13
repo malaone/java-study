@@ -5,6 +5,8 @@ import java.io.RandomAccessFile;
 import java.nio.Buffer;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 /**
  * @Author: xulifei
@@ -15,7 +17,8 @@ public class Main {
 
 
     public static void main(String[] args) {
-        Buffer buffer = ByteBuffer.allocate(48);
-        buffer.rewind();
-    }
+        int[] a = new int[2];
+
+        System.out.println(a[1]);
+     }
 }
